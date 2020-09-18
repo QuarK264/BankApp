@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/cardDetailsFragment">
+
+    <fragment
+        android:id="@+id/cardDetailsFragment"
+        android:name="com.bank.app.ui.details.CardDetailsFragment"
+        android:label="CardDetailsFragment"
+        tools:layout="@layout/fragment_card_details">
+        <action
+            android:id="@+id/action_cardDetailsFragment_to_cardsListFragment"
+            app:destination="@id/cardsListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cardsListFragment"
+        android:name="com.bank.app.ui.list.CardsListFragment"
+        android:label="CardsListFragment"
+        tools:layout="@layout/fragment_cards">
+        <action
+            android:id="@+id/action_cardsListFragment_to_cardDetailsFragment"
+            app:destination="@id/cardDetailsFragment" />
+    </fragment>
+</navigation>
