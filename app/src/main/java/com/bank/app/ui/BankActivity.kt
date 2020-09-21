@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import com.bank.app.R
 import com.bank.app.core.base.BaseActivity
-import com.bank.app.viewmodels.BankViewModel
+import com.bank.app.viewmodel.BankViewModel
 
 class BankActivity : BaseActivity() {
     val viewModel: BankViewModel by viewModels()

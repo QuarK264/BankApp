@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/size_16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/cardImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_22dp"
+            android:layout_marginTop="@dimen/size_32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_height="@dimen/size_24dp"
+            tools:layout_width="39dp" />
+
+        <TextView
+            android:id="@+id/cardNumberView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_18dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="@dimen/size_22dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cardImageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/userImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_22dp"
+            android:layout_marginTop="@dimen/size_32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardImageView"
+            tools:layout_height="30dp"
+            tools:layout_width="30dp" />
+
+        <TextView
+            android:id="@+id/userNameView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_14dp"
+            android:layout_marginTop="@dimen/size_32dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@id/userImageView"
+            app:layout_constraintTop_toBottomOf="@id/cardNumberView" />
+
+        <TextView
+            android:id="@+id/cardValidDateLabelView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_24dp"
+            android:layout_marginEnd="@dimen/size_22dp"
+            android:text="@string/card_valid_date_label"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardNumberView" />
+
+        <TextView
+            android:id="@+id/cardValidDateView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size_22dp"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardValidDateLabelView" />
+
+        <TextView
+            android:id="@+id/cardBalanceView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_22dp"
+            android:layout_marginTop="@dimen/size_36dp"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userImageView" />
+
+        <TextView
+            android:id="@+id/standardCardBalanceLabelView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_22dp"
+            android:layout_marginEnd="@dimen/size_22dp"
+            android:text="@string/card_balance_label"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardValidDateView" />
+
+        <TextView
+            android:id="@+id/standardCardBalanceView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_4dp"
+            android:layout_marginEnd="@dimen/size_22dp"
+            android:layout_marginBottom="28dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/standardCardBalanceLabelView"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

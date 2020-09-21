@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BankApp</string>
+
+    <string name="user_details_title">Главная</string>
+    <string name="card_valid_date_label">VALID THRU</string>
+    <string name="card_balance_label">Your Balance</string>
+    <string name="currency_title">Change currency</string>
+    <string name="transaction_history_title">History</string>
 </resources>

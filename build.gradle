@@ -3,7 +3,7 @@ buildscript {
 
     ext {
         //region Kotlin
-        kotlin_version = "1.4.10"
+        kotlin_version = "1.3.72"
         //endregion Kotlin
 
         //region AndroidX
