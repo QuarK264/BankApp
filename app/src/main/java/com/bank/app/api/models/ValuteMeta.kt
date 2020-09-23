@@ -22,5 +22,5 @@ class ValuteMeta(
     @Serializable(OffsetDateTimeSerializer::class)
     val timestamp: OffsetDateTime,
     @SerialName("Valute")
-    val valute: List<Valute>
+    val valute: ListValute
 )

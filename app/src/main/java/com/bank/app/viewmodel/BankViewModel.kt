@@ -3,19 +3,18 @@ package com.bank.app.viewmodel
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import com.bank.app.core.base.BaseViewModel
-import com.bank.app.core.domain.entities.User
 import com.bank.app.core.domain.interaction.GetSimpleUsersInteractor
 import com.bank.app.core.domain.interaction.GetUserInteractor
 import com.bank.app.core.extension.execute
+import com.bank.app.ui.details.model.User
+import com.bank.app.ui.details.model.mapToView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import org.kodein.di.generic.instance
 
-class BankViewModel(
-    application: Application
-) : BaseViewModel(application) {
+class BankViewModel(application: Application) : BaseViewModel(application) {
 
     private val getUserInteractor: GetUserInteractor by instance()
     private val getSimpleUsersInteractor: GetSimpleUsersInteractor by instance()
@@ -23,7 +22,7 @@ class BankViewModel(
     private val disposable = CompositeDisposable()
     private var user: User? = null
 
-    var response = MutableLiveData<Response>()
+    var response = MutableLiveData<UserResponse>()
 
     fun getUser() {
         val user = user
@@ -34,17 +33,18 @@ class BankViewModel(
                 getUserInteractor.execute(it.first().cardNumber)
             }
         }
+
         singleUser
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .doOnSubscribe { response.value = Response.loading() }
+            .doOnSubscribe { response.value = UserResponse.loading() }
             .subscribe(
                 {
-                    this.user = it
-                    response.value = Response.success(it)
+                    this.user = it.mapToView()
+                    response.value = UserResponse.success(it.mapToView())
                 },
                 {
-                    response.value = Response.error(it)
+                    response.value = UserResponse.error(it)
                 }
             )
             .addTo(disposable)

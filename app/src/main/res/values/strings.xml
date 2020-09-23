@@ -6,4 +6,15 @@
     <string name="card_balance_label">Your Balance</string>
     <string name="currency_title">Change currency</string>
     <string name="transaction_history_title">History</string>
+
+    <string name="standard_balance_pattern">$%s</string>
+    <string name="gbp_symbol">£</string>
+    <string name="gbp_name">GBP</string>
+    <string name="gbp_balance_pattern">£%s</string>
+    <string name="eur_symbol">€</string>
+    <string name="eur_name">EUR</string>
+    <string name="eur_balance_pattern">€%s</string>
+    <string name="rub_symbol">₽</string>
+    <string name="rub_name">RUB</string>
+    <string name="rub_balance_pattern">₽%s</string>
 </resources>

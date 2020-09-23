@@ -8,10 +8,10 @@ object BigDecimalSerializer : KSerializer<BigDecimal> {
     override val descriptor = SerialDescriptor("BigDecimal")
 
     override fun deserialize(decoder: Decoder): BigDecimal {
-        return BigDecimal(decoder.decodeString())
+        return BigDecimal(decoder.decodeDouble())
     }
 
     override fun serialize(encoder: Encoder, value: BigDecimal) {
-        encoder.encodeString(value.toPlainString())
+        encoder.encodeDouble(value.toDouble())
     }
 }

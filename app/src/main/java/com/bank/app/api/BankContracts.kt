@@ -3,18 +3,24 @@ package com.bank.app.api
 import okhttp3.HttpUrl
 
 object BankContracts {
-    class Server {
+    enum class Server {
+        DEV;
 
-        val usersApi = HttpUrl.Builder()
+        val usersApi
+            get() = when (this) {
+                DEV -> HttpUrl.Builder()
                     .scheme(SCHEME_HTTPS)
                     .host(USERS_HOST_URL)
                     .addPathSegments("$API_PREFIX$API_PLATFORM$VERSION_PREFIX")
                     .build()
-
-        val valuteApi = HttpUrl.Builder()
+            }
+        val valuteApi
+            get() = when (this) {
+                DEV -> HttpUrl.Builder()
                     .scheme(SCHEME_HTTPS)
                     .host(VALUTE_HOST_URL)
                     .build()
+            }
 
         companion object {
             const val SCHEME_HTTPS = "https"

@@ -12,6 +12,9 @@ class AndroidValuteRepository(
     override fun getValutes(): Single<List<Valute>> = valuteApi
         .getValutes()
         .map { meta ->
-            meta.valute.map { it.mapToDomain() }
+            listOf(
+                meta.valute.gbp.mapToDomain(),
+                meta.valute.eur.mapToDomain()
+            )
         }
 }

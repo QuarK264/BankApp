@@ -13,7 +13,7 @@ import org.kodein.di.generic.instance
 
 class BankApplication : Application(), KodeinAware {
     override val kodein = Kodein.lazy {
-        bind() from instance(BankContracts.Server)
+        bind() from instance(BankContracts.Server.DEV)
         //bind() from instance(BankContracts.Server.Valute)
 
         importOnce(androidXModule(this@BankApplication))

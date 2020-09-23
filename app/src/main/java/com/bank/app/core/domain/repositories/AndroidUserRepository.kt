@@ -12,7 +12,7 @@ class AndroidUserRepository(
     override fun getUsers(): Single<List<User>> = userApi
         .getUsers()
         .map { list ->
-            list.map {
+            list.users.map {
                 it.mapToDomain()
             }
         }

@@ -21,7 +21,7 @@ buildscript {
 
         //region KotlinX
         immutable_collections_version = '0.1'
-        serialization_version = '0.10.0'
+        serialization_version = '0.20.0'
         //endregion KotlinX
 
         //region ReactiveX
